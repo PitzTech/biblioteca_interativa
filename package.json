@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "migration:create": "knex migrate:make"
+    "migration:create": "knex migrate:make"
   },
   "keywords": [],
   "author": "",
