@@ -1,0 +1,10 @@
+node_modules
+
+# replit
+#
+/.ccls-cache
+.replit
+replit.nix
+
+# yarn is the project standart
+package-lock.json
