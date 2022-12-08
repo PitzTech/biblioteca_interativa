@@ -1,17 +1,17 @@
 const tableName = 'users'
 
-exports.up = (knex) => knex.schema
-   .createTable(tableName, function (table) {
-      table.increments('id').primary();
+exports.up = knex => 
+  knex.schema.createTable(tableName, table => {
+      table.uuid('id').unique().primary().notNullable().defaultTo(knex.raw('uuid_generate_v4()'));
       table.string('name', 50).notNullable();
-      table.string('email', 50).notNullable();
-      table.string('password', 100).notNullable();
-      table.string('address', 100).notNullable();
-      table.string('cep', 8).notNullable();
+      table.string('email', 50).unique().notNullable();
+      table.string('password', 255).notNullable();
+      table.string('address', 100).nullable();
+      table.string('cep', 8).nullable();
       table.enum('role', ['ADMIN', 'CLIENT', 'STAFF']).notNullable();
+     
+      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.timestamp('updated_at').nullable()
    })
 
-exports.down = (knex) => knex.schema
-   .dropTable(tableName)
-
-
+exports.down = knex => knex.schema.dropTable(tableName)
