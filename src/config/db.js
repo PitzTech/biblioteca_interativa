@@ -1,5 +1,3 @@
-const path = require('path')
-
 // const knexConfig = {
 //    client: 'sqlite3',
 //    connection: {
@@ -21,8 +19,8 @@ const knexConfig = {
       max: 10
    },
    migrations: {
-      tableName: 'migrations',
-      directory: path.join(__dirname, '../infra/db/migrations')
+      tableName: 'knex_migrations',
+      directory: './src/infra/db/migrations'
    }
 }
 

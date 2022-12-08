@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "migration:create": "knex migrate:make"
+    "migration:create": "knex migrate:make",
+    "migration:run": "knex migrate:latest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "knex": "^2.3.0",
+    "knex": "0.21.19",
     "objection": "^3.0.1",
     "pg": "^8.8.0",
     "sqlite3": "^5.1.2"

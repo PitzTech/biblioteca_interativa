@@ -1,4 +1,4 @@
-const tableName = 'subcription_types'
+const tableName = 'subscription_types'
 
 exports.up = knex => knex.schema.createTable(tableName, table => {
    table.increments('id').primary()

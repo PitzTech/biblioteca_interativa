@@ -10,7 +10,7 @@ exports.up = knex => knex.schema.createTable(tableName, table => {
    table.string('exp_year', 2).notNullable()
    table.string('billing_address', 100).nullable();
 
-   table.uuid('user_id').notNullable().references('id').inTable('users')
+   table.integer('user_id').notNullable().references('id').inTable('users')
 })
 
 exports.down = knex => knex.schema.dropTable(tableName)

@@ -6,8 +6,8 @@ exports.up = knex => knex.schema.createTable(tableName, table => {
    table.integer('actual_page').notNullable()
    table.boolean('finished').notNullable().defaultTo('false')
 
-   table.uuid('user_id').notNullable().references('id').inTable('users')
-   table.uuid('book_id').notNullable().references('id').inTable('books')
+   table.integer('user_id').notNullable().references('id').inTable('users')
+   table.integer('book_id').notNullable().references('id').inTable('books')
 
 })
 

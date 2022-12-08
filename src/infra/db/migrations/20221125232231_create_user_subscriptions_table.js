@@ -6,8 +6,8 @@ exports.up = knex => knex.schema.createTable(tableName, table => {
    table.timestamp('start_time').notNullable();
    table.timestamp('end_time').notNullable();
 
-   table.uuid('user_id').notNullable().references('id').inTable('users')
-   table.uuid('subscription_type_id').notNullable().references('id').inTable('subscription_types')
+   table.integer('user_id').notNullable().references('id').inTable('users')
+   table.integer('subscription_type_id').notNullable().references('id').inTable('subscription_types')
 })
 
 exports.down = knex => knex.schema.dropTable(tableName)

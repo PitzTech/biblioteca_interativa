@@ -5,8 +5,8 @@ exports.up = knex => knex.schema.createTable(tableName, table => {
    table.enum('status', ['REFUSED', 'ACCEPTED', 'PROCESSING', 'CANCELLED']).notNullable().defaultTo('PROCESSING')
    table.timestamp('created_at').defaultTo(knex.fn.now())
 
-   table.uuid('credit_card_id').notNullable().references('id').inTable('credit_cards')
-   table.uuid('user_id').notNullable().references('id').inTable('users')
+   table.integer('credit_card_id').notNullable().references('id').inTable('credit_cards')
+   table.integer('user_id').notNullable().references('id').inTable('users')
 })
 
 
